@@ -1,0 +1,285 @@
+.table-loader {
+  margin-left: 50%;
+}
+
+.action-icon {
+  font-size: 20px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.action-icon-red {
+  color: red;
+}
+
+.action-icon-yellow {
+  color: #0058ff;
+}
+
+.image-card-container {
+  position: relative;
+  width: 10rem;
+  margin-right: 20px;
+}
+
+.image-card {
+  transition: transform 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+  width: 100%;
+  height: 100%;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.image-card:hover .overlay {
+  opacity: 1;
+}
+
+.icon {
+  color: white;
+  font-size: 2rem;
+}
+
+.star-rating {
+  font-size: 20px;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+  font-size: 1.5rem;
+}
+
+.profile-rounded-img {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ddd;
+}
+
+.document-flex-box {
+  display: flex;
+}
+
+.card-heading {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-heading label {
+  color: #111111e5 !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.ml-10 {
+  margin-left: 15px;
+}
+
+.verified-badge {
+  font-size: 20px;
+  color: #0087ff;
+  margin-right: 5px;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center horizontally */
+  justify-content: center;
+  /* Center vertically */
+  text-align: center;
+  /* Center text */
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  /* Center stars horizontally */
+  align-items: center;
+}
+
+.star {
+  margin: 0 2px;
+  /* Adjust spacing between stars */
+}
+//theme button
+.common-button,
+.common-button:active,
+.common-button:focus {
+  background: #6055d0 !important;
+  text-transform: capitalize;
+}
+
+.common-button:hover {
+  background: #3725ea !important;
+}
+//danger
+.common-button-danger,
+.common-button-danger:active,
+.common-button-danger:focus {
+  background: #ff0000c4 !important;
+  text-transform: capitalize;
+}
+
+.common-button-danger:hover {
+  background: red !important;
+}
+//secondary
+.common-button-secondary,
+.common-button-secondary:active,
+.common-button-secondary:focus {
+  background: #403D39 !important;
+  text-transform: capitalize;
+}
+
+.common-button-secondary:hover {
+  background: #545b62 !important;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.card-list-title {
+  margin-top: 0px !important;
+}
+
+.mt-0 {
+  margin-top: 0px !important;
+}
+
+.img-preview-small {
+  width: 120px !important;
+  height: 120px !important;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-top: 15px;
+}
+
+// Choose file CSS Start
+input[type="file"] {
+  padding: 4px;
+  margin: -4px;
+  position: relative;
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  /* File Selector Button Styles */
+  &::file-selector-button {
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(#000, 0.16);
+    box-shadow: 0px 1px 0px rgba(#000, 0.05);
+    margin-right: 16px;
+
+    /*
+      This is a hack to change the button label. 
+      I'm hiding the default label and then 
+      manually applying the width based on 
+      updated icon and label.
+    */
+    width: 132px;
+    color: transparent;
+
+    /*
+      Firefox doesn't support the pseudo ::before 
+      or ::after elements on this input field so 
+      we need to use the @supports rule to enable 
+      default styles fallback for Firefox.
+    */
+    @supports (-moz-appearance: none) {
+      color: var(--primary-color);
+    }
+
+    &:hover {
+      background-color: #f3f4f6;
+    }
+
+    &:active {
+      background-color: #e5e7eb;
+    }
+  }
+
+  /* Faked label styles and icon */
+  &::before {
+    position: absolute;
+    pointer-events: none;
+    top: 14px;
+    left: 16px;
+    height: 20px;
+    width: 20px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+  }
+
+  &::after {
+    position: absolute;
+    pointer-events: none;
+    top: 16px;
+    left: 40px;
+    color: var(--primary-color);
+    content: "Upload File";
+  }
+
+  /* Handle Component Focus */
+  &:focus-within::file-selector-button,
+  &:focus::file-selector-button {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+}
+
+// Choose file CSS End
+
+.sidebar-nav-custom:hover {
+  background-color: #6055d0 !important;
+  border-radius: 5px !important;
+  cursor: pointer;
+}
+
+.nav-link.subMenu-item.sidebar-nav-custom.active {
+  background-color: #6055d0 !important;
+  border-radius: 5px !important;
+  cursor: pointer;
+}
+
+// .subnav-custom.active {
+//   padding-top: 0px !important;
+// }
+
+//if upload files is not aligned properly then use this class name upload_files
+.upload_files input[type="file"]::after {
+  top: 39px;
+  left: 40px;
+}
+
+.upload_files input[type="file"]::before {
+  top: 39px;
+  left: 18px;
+}
